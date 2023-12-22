@@ -1,0 +1,332 @@
+* {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     cursor: url(../images/thanos.png),auto;
+}
+
+:root{
+     /* Light Mode Colors */
+     --background-light-color: #A0E4CB;
+     --navbar-light-background-color: #59C1BD;
+     --navbar-light-color: #0D4C92;
+     --searchBar-light-box-shadow: #0D4C92;
+     --text-light-color: #000;
+     
+     /* Dark Mode Colors */
+     --background-dark-color: #000;
+     --navbar-dark-background-color: #150050;
+     --navbar-dark-color: #FB2576;
+     --searchBar-dark-box-shadow: #fc82b1;
+     --text-dark-color: #fff;
+}
+
+[color-scheme="dark"]{
+     --background-color: var(--background-dark-color);
+     --navbar-background-color: var(--navbar-dark-background-color);
+     --navbar-color: var(--navbar-dark-color);
+     --searchBar-box-shadow: var(--searchBar-dark-box-shadow);
+     --text-color: var(--text-dark-color);
+}
+
+[color-scheme="light"]{
+     --background-color: var(--background-light-color);
+     --navbar-background-color: var(--navbar-light-background-color);
+     --navbar-color: var(--navbar-light-color);
+     --searchBar-box-shadow: var(--searchBar-light-box-shadow);
+     --text-color: var(var(--text-light-color));
+}
+
+
+body {
+     background-color: var(--background-color);
+     font-family: 'Kanit', sans-serif;
+     align-items: center;
+     height: 100vh;
+     width: 100vw;
+}
+
+.flex-row {
+     display: flex;
+     flex-direction: row;
+}
+
+.flex-col {
+     display: flex;
+     flex-direction: column;
+}
+
+/*--------------------------------------------------------- Navbar ------------------------------------------------- */
+
+/* Left Side */
+.navbar {
+     justify-content: space-between;
+     align-items: center;
+     width: 100%;
+     background-color: var(--navbar-background-color);
+     font-weight: 600;
+     letter-spacing: 2px;
+     /* text-shadow: 0px 0px 5px #707d9d; */
+     font-size: 30px;
+     padding: 0 20px;
+}
+
+.navbar-brand {
+     align-items: center;
+     gap: 10px;
+}
+
+.navbar-brand a{
+     text-decoration: none;
+     color: var(--navbar-color);
+}
+
+/* Right Side */
+.logo {
+     width: 3%;
+     min-width: 45px;
+}
+
+.favAndTheme-btn {
+     align-items: center;
+     gap: 10px;
+}
+
+.link-to-different-page{
+     justify-content: center;
+     text-decoration: none;
+}
+
+.btn {
+     border: none;
+     outline: none;
+     padding: 10px;
+     background-color: var(--navbar-color);
+     border-radius: 3px;
+     color: #fff;
+     height: 40px;
+     font-size: 16px;
+     cursor: url(../images/thanos.png),auto;
+
+}
+
+#theme-btn {
+     width: 40px;
+}
+
+#theme-btn i {
+     font-size: 20px;
+}
+
+.fav-btn {
+     font-size: 16px;
+     width: 140px;
+}
+
+.fav-icon {
+     color: 1fff;
+}
+
+.bg-right-side-img {
+     position: fixed;
+     right: 0;
+     bottom: 0;
+     height: 90%;
+     /* width: auto; */
+     filter: blur(2px);
+}
+
+/*---------------------------------------------------- Search Bar and Results---------------------------------------- */
+
+.search-bar-container {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     height: 50px;
+}
+
+.search-icon-container {
+     background: var(--navbar-background-color);
+     box-shadow: 0px 0px 7px 0px var(--searchBar-box-shadow);
+     color: #fff;
+     height: 50px;
+     width: 50px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     font-size: 20px;
+     margin-top: 50px;
+     border-radius: 10px 0 0 10px;
+}
+
+.searchBar-items {
+     min-width: 40%;
+}
+
+#search-bar {
+     background: var(--navbar-background-color);
+     color: #fff;
+     min-width: 550px;
+     height: 50px;
+     font-size: 20px;
+     border: none;
+     border-left:5px solid var(--navbar-color); 
+     box-shadow: 0px 0px 7px 0px var(--searchBar-box-shadow);
+     border-radius: 0 10px 10px 0;
+     outline: none;
+     padding: 10px;
+     letter-spacing: 2px;
+     margin-top: 50px;
+     z-index: 1;
+}
+
+input::placeholder {
+     color: #fff;
+     font-size: 20px;
+}
+
+.img-info {
+     gap: 10px;
+}
+
+.img-info img {
+     width: 65px;
+}
+
+#search-results {
+     min-width: 435px;
+     /* height: 500px; */
+     margin-top: 30px;
+     list-style: none;
+     z-index: 2;
+     backdrop-filter: blur(4px);
+     /* overflow-y: scroll; */
+}
+
+#search-results li {
+     background: rgba(56, 56, 56, 0.6);
+     height: 100px;
+     color: white;
+     width: 100%;
+}
+
+#search-results li .hero-name {
+     transition: all 0.2s ease;
+     cursor: url(../images/thanos.png),auto;
+
+}
+
+#search-results li:hover .hero-name {
+     color: red;
+}
+
+.single-search-result {
+     padding: 0 5px;
+     justify-content: space-between;
+     align-items: center;
+     gap: 10px;
+     border: 1px solid black;
+     width: inherit;
+}
+
+.character-info {
+     text-decoration: none;
+     color: white;
+}
+
+.hero-info {
+     display: flex;
+     align-items: center;
+}
+
+.hero-name {
+     /* cursor: url(../images/thanos.png),auto !important; */
+     font-size: 26px;
+}
+
+.buttons {
+     gap: 5px;
+     padding: 0 10px;
+}
+
+/*------------------------------------------------------ Background Image ------------------------------------------- */
+.bg-img {
+     width: 70%;
+     min-width: 600px;
+     /* height: auto; */
+     position: fixed;
+     bottom: -30px;
+     left: 0;
+     right: 0;
+     margin: auto;
+}
+
+/* ----------------------------------------------Toast for notification--------------------------------------------------*/
+.fav-toast,
+.remove-toast {
+     position: absolute;
+     bottom: 100px;
+     font-size: 24px;
+     width: 350px;
+     color: white;
+     letter-spacing: 1px;
+     padding: 10px 20px;
+     z-index: 2;
+     text-align: center;
+     left: 0;
+     right: 0;
+     margin: auto;
+     border-radius: 5px;
+}
+
+.fav-toast[data-visiblity="show"],
+.remove-toast[data-visiblity="show"] {
+     display: block;
+}
+
+.fav-toast[data-visiblity="hide"],
+.remove-toast[data-visiblity="hide"] {
+     display: none;
+}
+
+.fav-toast {
+     background-color: #20B130;
+     box-shadow: 0px 0px 3px 3px white;
+}
+
+.remove-toast {
+     background-color: hsl(40, 100%, 61%);
+     box-shadow: 0px 0px 3px 3px white;
+}
+
+
+/* ------------------------------------------------Media Queries for different screen sizes ----------------------------- */
+
+@media screen and (max-width: 576px) {
+
+     #search-bar {
+          min-width: 435px;
+     }
+
+     .navbar {
+          flex-direction: column;
+          gap: 10px;
+          padding: 10px 0;
+          /* height: 30%; */
+     }
+
+     .navbar-brand {
+          display: flex;
+          flex-direction: column;
+
+     }
+
+     .navbar-brand span {
+          margin-top: -35px;
+     }
+
+     .logo {
+          width: 25%;
+          min-width: 45px;
+     }
+}
